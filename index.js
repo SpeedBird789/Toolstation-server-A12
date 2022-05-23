@@ -26,7 +26,15 @@ async function run(){
             const cursor = toolCollection.find(query);
             const tools = await cursor.toArray();
             res.send(tools);
+        })
 
+        const reviewsCollection = client.db('manufacturing').collection('reviews');
+
+        app.get('/review', async(req, res)=>{
+            const query = {};
+            const cursor = reviewsCollection.find(query);
+            const reviews = await cursor.toArray();
+            res.send(reviews);
         })
     }
     finally{
