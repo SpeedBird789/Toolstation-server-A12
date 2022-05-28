@@ -39,6 +39,7 @@ async function run(){
         const reviewsCollection = client.db('manufacturing').collection('reviews');
         const orderCollection = client.db('manufacturing').collection('orders');
         const usersCollection = client.db('manufacturing').collection('users');
+          
 
         app.get('/tool', async(req, res)=>{
             const query = {};
@@ -97,10 +98,24 @@ async function run(){
             res.send(tool);
         })
 
+        // GET
+        app.get('/tool', verifyJWT, async(req, res)=>{
+            const tools = await toolCollection.find().toArray();
+            res.send(tools);
+        })
+
         // POST
         app.post('/tool', async(req, res)=>{
             const newTool = req.body;
             const result = await toolCollection.insertOne(newTool);
+            res.send(result);
+        })
+
+        // DELETE
+        app.delete('/tool/:name', async(req, res)=>{
+            const name = req.params.name;
+            const filter = {name: name};
+            const result = await toolCollection.deleteOne(filter);
             res.send(result);
         })
 
