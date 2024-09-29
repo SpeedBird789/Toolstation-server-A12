@@ -12,3 +12,5 @@ In this project, I tried to make a Tools manufacturer website. Due to time const
 * Blogs answers some of the basic questions (just for mu practice)
 * One can subscribe to their newsletter by providing their email addres.
 
+
+Note: As per September 2024, I am aware the front-end isn't fetching data from MongoDB. Unfortunately, mongoDB deleted the cluster the data was stored in, hence this. Upon reaching out to them, I was told the cluster couldn't be reinstated and I needed to make a new cluster. I could potentially make another cluster and redeploy, might do that in the coming days. 
