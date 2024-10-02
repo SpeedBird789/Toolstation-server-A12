@@ -6,7 +6,7 @@ const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
 
 
 const app = express();
-const port = process.env.PORT || 5001;
+const port = process.env.PORT || 5000;
 
 const options = [
     cors({
@@ -165,7 +165,7 @@ async function run() {
         })
     }
     finally {
-        await client.close();
+        // await client.close();
     }
 }
 
