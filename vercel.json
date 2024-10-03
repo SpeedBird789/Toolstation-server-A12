@@ -1,5 +1,6 @@
 {
   "version": 2,
+<<<<<<< HEAD
 "builds": [
   {
     "src": "./index.js",
@@ -23,4 +24,12 @@
     }
   }
 ]
+=======
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/api"
+    }
+  ]
+>>>>>>> 3460252207a1b447ff6d0857ef4443753d65a0db
 }
